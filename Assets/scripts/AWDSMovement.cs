@@ -28,7 +28,8 @@ public class AWDSMovement : MonoBehaviour
                     gameObject.transform.localScale.z
                 );
             }
-            rigid.AddForce(forceX * Vector2.right);
+            rigid.velocity = forceX * Vector3.right;
+            //rigid.AddForce(forceX * Vector2.right);
         }
         else if (Input.GetKey(KeyCode.A))
         {

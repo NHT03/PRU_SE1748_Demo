@@ -9,24 +9,24 @@ public class Idle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        if (health <= 0) Die();
     }
     public void TakeDamage(int damage)
     {
-        health -= damage;  
+        health -= damage;
         if (health <= 0)
         {
-            Die();  
+            Die();
         }
     }
     public void Die()
     {
-        Destroy(gameObject);  
+        Destroy(gameObject, 1f);
     }
 }

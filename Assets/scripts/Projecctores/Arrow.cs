@@ -24,10 +24,11 @@ public class Arrow : MonoBehaviour
                 }
             }
             hasHit = true;
-            rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = 0;
-            transform.parent = collision.transform;
+            //rb.isKinematic = true;
+            //rb.velocity = Vector3.zero;
+            //rb.angularVelocity = 0;
+            //transform.parent = collision.transform;
+            Destroy(gameObject);
             //Destroy(GetComponent<Rigidbody2D>());
         }
     }

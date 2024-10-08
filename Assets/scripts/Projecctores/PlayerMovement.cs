@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5f;
+
+    [SerializeField]
     private bool facingRight = false;
     // Start is called before the first frame update
     void Start()
@@ -27,20 +29,20 @@ public class PlayerMovement : MonoBehaviour
 
         if (moveHorizontal > 0 && !facingRight)
         {
-            Flip(); // Lật lại nhân vật
+            Flip(); 
         }
-        // Kiểm tra nếu nhân vật di chuyển sang trái và đang quay về bên phải
+        
         else if (moveHorizontal < 0 && facingRight)
         {
             Flip();
         }
     }
-    void Flip()
+    void Flip()// Lật lại nhân vật
     {
-        // Đổi hướng của nhân vật bằng cách thay đổi giá trị scale trên trục X
-        facingRight = !facingRight; // Đổi trạng thái hướng
+        
+        facingRight = !facingRight; 
         Vector3 theScale = transform.localScale;
-        theScale.x *= -1; // Lật trục X
-        transform.localScale = theScale; // Áp dụng scale mới cho nhân vật
+        theScale.x *= -1; 
+        transform.localScale = theScale;
     }
 }
